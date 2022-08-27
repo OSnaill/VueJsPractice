@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1 - 01 - exo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- On afficher notre composant -->
+       il est exactement {{date}}
+    </div>
+
+    <script>
+        
+        // On récupère la date
+        // const date = new Date();        
+        // On stock heure minute seconde dans une variable de chaque
+        // const hour = date.getHours();
+        // const minutes = date.getMinutes();
+        // const seconds = date.getSeconds();
+
+        // Création de l'application
+        app = Vue.createApp({
+
+            data(){
+                    return{ 
+                        // date : `Il est exactement `+ hour + `:` +minutes+':'+seconds 
+                        
+                        // Correction !
+                        date : new Date().toLocaleTimeString()
+                    }
+            }
+        });
+
+        app.mount('#app')
+    </script>
+</body>
+</html>
