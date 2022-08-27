@@ -12,11 +12,10 @@
     <div id="app">
         <h1>{{titre.split('').reverse().join('')}}</h1>
         <h3> {{sousTitre}}</h3>
-        <p>{{inter.toString()}}</p>
+        <p>{{inter ? 'vrai' : 'faux'}}</p>
     </div>
 
     <script>
-        const condition =false;
         // Pour créer une application Vue3, 2 instructions sont nécessaires
         // Première instruction : La méthode createApp() créer un objet app
         app = Vue.createApp({
