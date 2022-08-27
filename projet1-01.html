@@ -9,7 +9,10 @@
 </head>
 <body>
     <!-- On crée une balise avec un {id} -->
-    <div id="app"></div>
+    <div id="app">
+        <h1>{{titre}}</h1>
+        <h3> {{sousTitre}}</h3>
+    </div>
 
     <script>
         // Pour créer une application Vue3, 2 instructions sont nécessaires
@@ -18,8 +21,20 @@
 
             // template permet d'effectuer du code html
             // Le ` permet de faciliter l'écriture en colonne
-            template : `<h2> Première application Vue 3</h2>
-                        <p> ... en trois minutes chrono ! </p>`
+            // template : `<h2> Première application Vue 3</h2>
+            //             <p> ... en trois minutes chrono ! </p>`,
+
+            // Le template peut être défini dans la vue et non dans le script
+            // on effectue la fonction anonyme  data()
+            // Elle nous retourne un objet accessible via des accolades double {{}}
+            data() {
+                return {
+                    titre: 'Ma première application vue 3',
+                    sousTitre: 'En trois minutes chrono' 
+                }
+            }
+
+            
         });
 
         // Deuxième instruction : La méthode mount({id}) s'execute sur la première instruction
