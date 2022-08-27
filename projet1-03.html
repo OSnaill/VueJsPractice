@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-03</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <!-- On crée une balise avec un {id} -->
+    <div id="app">
+        <h1>{{titre.split('').reverse().join('')}}</h1>
+        <h3> {{sousTitre}}</h3>
+        <p>{{inter.toString()}}</p>
+    </div>
+
+    <script>
+        const condition =false;
+        // Pour créer une application Vue3, 2 instructions sont nécessaires
+        // Première instruction : La méthode createApp() créer un objet app
+        app = Vue.createApp({
+
+            // template permet d'effectuer du code html
+            // Le ` permet de faciliter l'écriture en colonne
+            // template : `<h2> Première application Vue 3</h2>
+            //             <p> ... en trois minutes chrono ! </p>`,
+
+            // Le template peut être défini dans la vue et non dans le script
+            // on effectue la fonction anonyme  data()
+            // Elle nous retourne un objet accessible via des accolades double {{}}
+            data() {
+                return {
+                    titre: 'Ma première application vue 3',
+                    sousTitre: 'En trois minutes chrono',
+                    inter: false
+                }
+            }
+
+            
+        });
+
+        // Deuxième instruction : La méthode mount({id}) s'execute sur la première instruction
+        app.mount('#app');
+    </script>
+</body>
+</html>

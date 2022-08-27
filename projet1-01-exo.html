@@ -10,18 +10,28 @@
 <body>
     
     <div id="app">
-        {{date}}
+        <!-- On afficher notre composant -->
+       il est exactement {{date}}
     </div>
+
     <script>
-        const date = new Date();
-        const hour = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
+        
+        // On récupère la date
+        // const date = new Date();        
+        // On stock heure minute seconde dans une variable de chaque
+        // const hour = date.getHours();
+        // const minutes = date.getMinutes();
+        // const seconds = date.getSeconds();
+
+        // Création de l'application
         app = Vue.createApp({
 
             data(){
                     return{ 
-                        date : `Il est exactement `+ hour + `h` +minutes+':'+seconds  
+                        // date : `Il est exactement `+ hour + `:` +minutes+':'+seconds 
+                        
+                        // Correction !
+                        date : new Date().toLocaleTimeString()
                     }
             }
         });
