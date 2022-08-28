@@ -10,31 +10,13 @@
 <body>
 
     <div id="app">
-        <p>{{heureFr}}</p>
-        <p>{{heureUs}}</p>
+        <img v-bind:src="url" alt="">
     </div>
     <script>
         app = Vue.createApp({
-
             data(){
                 return {
-                    date : new Date()
-                }
-            },
-            // Il est possible d'effectuer du javascript dans les interpollations
-            // Si le code est long ou complexe, il est préférable de le placer dans le modèle
-            // qui se trouve dans la propriété computed
-            computed: {
-                calcul(){
-                    return this.d
-                },
-
-                heureFr(){
-                    return this.date.toLocaleTimeString('fr-FR');
-                },
-
-                heureUs(){
-                    return this.date.toLocaleTimeString('en-US');
+                    url: 'https://vuejs.org/images/logo.png'
                 }
             }
         });
