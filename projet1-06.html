@@ -4,37 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>squelette</title>
+    <title>projet 1-06</title>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
 
     <div id="app">
-        <p>{{heureFr}}</p>
-        <p>{{heureUs}}</p>
+        <div v-bind:id="id"></div>
+        <img v-bind:src="url" alt="">
     </div>
     <script>
         app = Vue.createApp({
-
             data(){
                 return {
-                    date : new Date()
-                }
-            },
-            // Il est possible d'effectuer du javascript dans les interpollations
-            // Si le code est long ou complexe, il est préférable de le placer dans le modèle
-            // qui se trouve dans la propriété computed
-            computed: {
-                calcul(){
-                    return this.d
-                },
-
-                heureFr(){
-                    return this.date.toLocaleTimeString('fr-FR');
-                },
-
-                heureUs(){
-                    return this.date.toLocaleTimeString('en-US');
+                    id: "toto",
+                    url: 'https://vuejs.org/images/logo.png',
                 }
             }
         });
