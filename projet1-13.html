@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>squelette</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <div id="app">
+        <p>Cochez les langages que vous connaissez :</p>
+        <input type="checkbox" v-model="cases" value="HTML">
+        <label for=""> HTML</label>
+        <input type="checkbox" v-model="cases" value="CSS">
+        <label for=""> CSS</label>
+        <input type="checkbox" v-model="cases" value="JavaScript">
+        <label for=""> JavaScript</label>
+        <div> Cases cochées : {{cases}} </div>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data(){
+                return{
+                    cases:[]
+                }
+            },
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

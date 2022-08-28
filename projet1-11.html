@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>squelette</title>
+    <title>projet 1-11</title>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
 
     <div id="app">
+        <textarea name="" id="" cols="30" rows="10" v-model="text"></textarea> </br>
+    <div style="white-space:pre">{{text}}</div>
     </div>
     <script>
         app = Vue.createApp({
+            data(){
+                return  {
+                    text:''
+                }
+            }
         });
         app.mount('#app');
     </script>
