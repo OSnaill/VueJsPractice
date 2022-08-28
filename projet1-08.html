@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet 1-08</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+       <p>Name :  <span v-text="person.name"></span></p>
+       <p>Age :  <span v-text="person.age"></span></p>
+
+       <p> horloge : <span v-text="horloge.hours"></span> </p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    person:{
+                        name:'gérard',
+                        age: 14
+                    },
+
+                    horloge:{
+                        hours: new Date().toLocaleTimeString(),
+                    }
+                }
+            },
+        });
+        // On peut stocker notre mount() dans une variable pour accéder directement à ses propriétés
+        const vm = app.mount('#app');
+        setTimeout(() => {
+            vm.person.age = "25";
+        },  2000);
+
+        setInterval(()=>{
+            vm.horloge.hours = new Date().toLocaleTimeString();
+        }, 1000)
+    </script>
+</body>
+</html>
